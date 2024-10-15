@@ -1,6 +1,4 @@
 # Dockapp
-# Dockerized Android Development Environment
-
 This project provides a lightweight and easily reproducible environment for Android app development without needing Android Studio. Using Docker, you can set up an Android SDK environment that supports building, testing, and running Android apps.
 
 ## Project Structure
