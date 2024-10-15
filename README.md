@@ -81,10 +81,10 @@ You can either clone an existing Android project into the android-app/ directory
 
 To clone a sample Android project:
 
-bash
+```bash
 
 git clone https://github.com/sample-android-project/android-app.git android-app
-
+```
 ## Build the Android App
 
 To build the Android project inside the container, run the following script:
