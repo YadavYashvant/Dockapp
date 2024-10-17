@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: android-dev-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: android-cli
+  template:
+    metadata:
+      labels:
+        app: android-cli
+    spec:
+      containers:
+      - name: android-cli-container
+        image: android-cli-container:latest
+        ports:
+        - containerPort: 5554
+        - containerPort: 5555
+        volumeMounts:
+        - name: project-volume
+          mountPath: /usr/src/app
+      volumes:
+      - name: project-volume
+        hostPath:
+          path: /path/to/your/android/project
+

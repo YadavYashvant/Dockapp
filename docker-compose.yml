@@ -1,0 +1,14 @@
+version: '3'
+services:
+  android-dev:
+    build: .
+    volumes:
+      - ./project:/usr/src/app
+    ports:
+      - "5554:5554"
+      - "5555:5555"
+    privileged: true  # Allows access to devices for Android debugging
+    environment:
+      ANDROID_HOME: "/opt/android-sdk"
+    container_name: android-cli-container
+
