@@ -167,7 +167,3 @@ docker-compose down
 ## **License**
 
 This project is licensed under the MIT License.
-
----
-
-This README now reflects the complete setup, usage instructions, and all relevant scripts for building, running, and testing Android apps in a Dockerized CLI environment.
