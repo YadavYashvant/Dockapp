@@ -1,5 +1,4 @@
 #!/bin/bash
-# Script to run the Android app on a connected device
 
 # Check if project directory exists
 if [ ! -d "/usr/src/app/$1" ]; then

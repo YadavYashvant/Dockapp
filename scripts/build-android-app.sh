@@ -1,5 +1,4 @@
 #!/bin/bash
-# Script to build the Android app
 
 # Check if the project directory exists
 if [ ! -d "/usr/src/app/$1" ]; then

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Script to initialize a new Android project
 
 # Check if project name is passed as an argument
 if [ -z "$1" ]; then
