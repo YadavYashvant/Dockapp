@@ -1,5 +1,4 @@
 #!/bin/bash
-# Script to clean the Android project
 
 # Check if project directory exists
 if [ ! -d "/usr/src/app/$1" ]; then
