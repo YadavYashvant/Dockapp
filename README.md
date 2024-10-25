@@ -1,3 +1,4 @@
+# 🚧 UNDER CONSTRUCTION❗ 🚧
 # **Dockapp: Android CLI Dockerized Environment**
 
 This project provides a lightweight, fully Dockerized environment for Android app development without the need for Android Studio. Using this Docker container, you can easily build, test, and run Android apps from the command line, with pre-configured scripts to streamline the process. It also includes Docker Compose support and optional Kubernetes deployment for flexible management.
@@ -134,7 +135,8 @@ You can run an Android emulator inside the container by following these steps:
 
 ---
 
-## **Optional: Kubernetes Deployment**
+
+## **Optional: Kubernetes Deployment 🚥**
 
 You can deploy the container using Kubernetes for scalable and managed deployment. The deployment configuration is provided in `android-deployment.yaml`.
 
