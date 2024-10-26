@@ -163,9 +163,3 @@ docker-compose down
 - **Permissions Issues**: If you encounter permission issues, ensure Docker has appropriate access rights to your filesystem (especially on Linux).
 - **SDK Paths**: Make sure the Android SDK paths are correctly configured in the Dockerfile and the SDK tools are properly installed.
 - **System Resources**: Running an emulator inside the container may require significant system resources (CPU, RAM).
-
----
-
-## **License**
-
-This project is licensed under the MIT License.
