@@ -6,8 +6,8 @@ This project provides a lightweight, fully Dockerized environment for Android ap
 ## **Project Structure**
 
 ```plaintext
-android-docker-cli/
-├── android-app/             # Your Android app source code (optional or clone it later)
+Dockapp/
+├── project/             # Your Android app source code (optional or clone it later)
 │   ├── app/
 │   │   ├── src/
 │   │   │   ├── main/
