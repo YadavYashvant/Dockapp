@@ -48,6 +48,7 @@ cd Dockapp
 Use Docker Compose to build the Docker image defined in the `Dockerfile`:
 
 ```bash
+cd docker
 docker-compose build
 ```
 
