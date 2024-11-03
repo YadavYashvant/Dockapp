@@ -1,1 +1,1 @@
-## This is just a showcase project with nothing to show.
+## This is just a showcase project with nothing to show 😀.
