@@ -140,9 +140,11 @@ You can run an Android emulator inside the container by following these steps:
 ## **Optional: Kubernetes Deployment 🚥**
 
 You can deploy the container using Kubernetes for scalable and managed deployment. The deployment configuration is provided in `android-deployment.yaml`.
+```bash
+edit path of your android project in android-deployment.yaml file
+```
 
 To deploy the container:
-
 ```bash
 kubectl apply -f android-deployment.yaml
 ```
