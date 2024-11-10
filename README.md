@@ -32,6 +32,14 @@ Dockapp/
 
 ---
 
+## **Prerequisites**
+
+- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
+- **Kubernetes** (Optional): For Kubernetes deployment, set up [Minikube](https://minikube.sigs.k8s.io/docs/start/) or access a cluster.
+
+--- 
+
 ## **Setup**
 
 ### **1. Clone the Repository**
