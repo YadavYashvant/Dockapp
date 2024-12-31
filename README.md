@@ -1,5 +1,4 @@
-# (❗UNDER CONSTRUCTION)
-❗❗ ATTENTION ❗❗ - It seems like the overengineered nature of android development has caused a lot of problems for this project, as I'm finding it cubersome to complete this project.
+❗ATTENTION - It seems like the overengineered nature of android development has caused a lot of problems for this project, as I'm finding it cubersome to complete this project.
 # **Dockapp: Android CLI Dockerized Environment**
 
 This project provides a lightweight, fully Dockerized environment for Android app development without the need for Android Studio. Using this Docker container, you can easily build, test, and run Android apps from the command line, with pre-configured scripts to streamline the process. It also includes Docker Compose support and optional Kubernetes deployment for flexible management.
