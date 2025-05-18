@@ -1,8 +1,0 @@
-
-# All the unnecessary files for docker image to be ignored
-
-.git
-project/build
-project/.gradle
-project/.idea
-*.iml

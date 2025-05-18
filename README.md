@@ -1,176 +1,101 @@
-❗ATTENTION - It seems like the overengineered nature of android development has caused a lot of problems for this project, as I'm finding it cubersome to complete this project.(BACK ON IT)
-# **Dockapp: Android CLI Dockerized Environment**
+# DockApp - Lightweight Android Development Studio
 
-This project provides a lightweight, fully Dockerized environment for Android app development without the need for Android Studio. Using this Docker container, you can easily build, test, and run Android apps from the command line, with pre-configured scripts to streamline the process. It also includes Docker Compose support and optional Kubernetes deployment for flexible management.
+DockApp is a lightweight GTK-based Android development environment for Linux. It provides essential features for Android development without the heavy resource requirements of Android Studio.
 
-## **Project Structure**
+## Features
 
-```plaintext
-Dockapp/
-├── project/             # Your Android app source code (optional or clone it later)
-│   ├── app/
-│   │   ├── src/
-│   │   │   ├── main/
-│   │   │   │   ├── AndroidManifest.xml
-│   │   │   │   ├── java/
-│   │   │   │   │   └── com/example/app/MainActivity.java or MainActivity.kt
-│   │   │   │   └── res/   # Resources like layouts, images, etc.
-│   │   ├── build.gradle    # Gradle build script for the app module
-│   └── ...
-├── docker/
-│   ├── Dockerfile           # Dockerfile for the Android CLI environment
-│   └── entrypoint.sh        # Optional entrypoint script for container initialization
-├── docker-compose.yml       # Docker Compose file for container management
-├── android-deployment.yaml  # Kubernetes deployment file (optional)
-├── README.md                # Project documentation and setup instructions
-├── scripts/
-│   ├── init-android-project.sh  # Shell script to initialize an Android project
-│   ├── build-android-app.sh     # Shell script to build the Android app
-│   ├── run-android-app.sh       # Shell script to run the Android app on a device/emulator
-│   └── clean-project.sh         # Shell script to clean the Android project
-```
+- Project creation and management
+- Code editor with Kotlin LSP support
+- USB device debugging
+- Build and run capabilities
+- Modern GTK interface using libadwaita
 
----
+## Requirements
 
-## **Prerequisites**
+- Linux operating system
+- Python 3.8 or higher
+- GTK 4.0
+- libadwaita
+- Android SDK
+- Android Debug Bridge (adb)
+- Kotlin Language Server
 
-- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
-- **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
-- **Kubernetes** (Optional): For Kubernetes deployment, set up [Minikube](https://minikube.sigs.k8s.io/docs/start/) or access a cluster.
+## Installation
 
---- 
-
-## **Setup**
-
-### **1. Clone the Repository**
-
-First, clone the project repository:
+1. Install system dependencies:
 
 ```bash
-git clone https://github.com/YadavYashvant/Dockapp.git
-cd Dockapp
+# Arch Linux
+sudo pacman -S python-gobject gtk4 libadwaita android-tools kotlin-language-server
+
+# Ubuntu/Debian
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1.0 adb kotlin-language-server
 ```
 
-### **2. Build the Docker Image**
-
-Use Docker Compose to build the Docker image defined in the `Dockerfile`:
+2. Install Python dependencies:
 
 ```bash
-cd docker
-docker-compose build
+pip install -r requirements.txt
 ```
 
-### **3. Run the Container**
-
-After building the image, run the container using Docker Compose:
+3. Install Android SDK:
 
 ```bash
-docker-compose up
+# Download Android SDK command line tools
+wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+unzip commandlinetools-linux-9477386_latest.zip
+mkdir -p ~/Android/Sdk/cmdline-tools
+mv cmdline-tools ~/Android/Sdk/cmdline-tools/latest
+
+# Add to your shell configuration
+echo 'export ANDROID_HOME=$HOME/Android/Sdk' >> ~/.bashrc
+echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin' >> ~/.bashrc
+source ~/.bashrc
+
+# Install required SDK components
+sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0"
 ```
 
-### **4. Access the Container**
+## Usage
 
-To access the container's shell, use the following command:
+1. Start the application:
 
 ```bash
-docker exec -it android-cli-container /bin/bash
+python src/main.py
 ```
 
----
+2. Create a new project:
+   - Click "New Project" in the sidebar
+   - Enter project name and package name
+   - Click "Create"
 
-## **Using the Android CLI Development Environment**
+3. Connect a device:
+   - Connect your Android device via USB
+   - Enable USB debugging in developer options
+   - The device should appear in the devices list
 
-You can either clone an existing Android project into the `android-app/` directory or create a new Android project using the provided scripts.
+4. Build and run:
+   - Open a Kotlin file in the editor
+   - Click "Build" to compile the project
+   - Click "Run" to install and launch on the connected device
 
-### **1. Initialize a New Android Project**
+## Project Structure
 
-To create a new Android project using the CLI, run the following script:
-
-```bash
-./scripts/init-android-project.sh <project-name>
+```
+dockapp/
+├── src/
+│   ├── main.py          # Main application window
+│   ├── editor.py        # Code editor component
+│   ├── project_manager.py # Project management
+│   └── device_manager.py # Device management
+├── requirements.txt     # Python dependencies
+└── README.md           # This file
 ```
 
-This will create a new Android project in the `/usr/src/app/<project-name>` directory inside the container.
+## Contributing
 
-### **2. Build the Android App**
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To build the Android app, run:
+## License
 
-```bash
-./scripts/build-android-app.sh <project-name>
-```
-
-This will compile the app and generate the APK file. The APK will be located in the `build/outputs/apk/` directory.
-
-```bash
-APK built at: /usr/src/app/<project-name>/build/outputs/apk/debug/app-debug.apk
-```
-
-### **3. Run the App on a Device/Emulator**
-
-To run the app on a connected device or emulator:
-
-```bash
-./scripts/run-android-app.sh <project-name>
-```
-
-Make sure a device or emulator is connected before running the script.
-
-### **4. Clean the Project**
-
-To clean the project (i.e., remove build files), run:
-
-```bash
-./scripts/clean-project.sh <project-name>
-```
-
----
-
-## **Optional: Running an Android Emulator**
-
-You can run an Android emulator inside the container by following these steps:
-
-1. Create an Android Virtual Device (AVD):
-
-    ```bash
-    avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64"
-    ```
-
-2. Start the emulator:
-
-    ```bash
-    emulator -avd test
-    ```
-
----
-
-
-## **Optional: Kubernetes Deployment 🚥**
-
-You can deploy the container using Kubernetes for scalable and managed deployment. The deployment configuration is provided in `android-deployment.yaml`.
-```bash
-"edit path of your android project in android-deployment.yaml file"
-```
-
-To deploy the container:
-```bash
-kubectl apply -f android-deployment.yaml
-```
-
----
-
-## **Cleaning Up**
-
-To stop and remove the Docker container after use, run:
-
-```bash
-docker-compose down
-```
-
----
-
-## **Troubleshooting**
-
-- **Permissions Issues**: If you encounter permission issues, ensure Docker has appropriate access rights to your filesystem (especially on Linux).
-- **SDK Paths**: Make sure the Android SDK paths are correctly configured in the Dockerfile and the SDK tools are properly installed.
-- **System Resources**: Running an emulator inside the container may require significant system resources (CPU, RAM).
+This project is licensed under the MIT License - see the LICENSE file for details.
