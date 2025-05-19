@@ -1,4 +1,4 @@
-# DockApp - Lightweight Android Development Studio
+# DockApp
 
 DockApp is a lightweight GTK-based Android development environment for Linux. It provides essential features for Android development without the heavy resource requirements of Android Studio.
 
