@@ -26,12 +26,12 @@ DockApp is a lightweight GTK-based Android development environment for Linux. It
 
 ```bash
 # Arch Linux
-sudo pacman -S python-gobject gtk4 libadwaita android-tools kotlin-language-server
+sudo pacman -S python-gobject gtk4 libadwaita android-tools
 
 # Ubuntu/Debian
-sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1.0 adb kotlin-language-server
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1.0 adb
 ```
-❗Important Note : The Kotlin language server would be automatically setup on the installation of the dockapp, in case some error occurs, it should be manually downloaded. 
+❗Important Note : The Kotlin language server would be automatically setup on the installation of the dockapp, in case some error occurs, it should be manually downloaded. <br><br>
 2. Install Python dependencies:
 
 ```bash
