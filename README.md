@@ -27,6 +27,7 @@ DockApp is a lightweight GTK-based Android development environment for Linux. It
 ```bash
 # Arch Linux
 sudo pacman -S python-gobject gtk4 libadwaita android-tools
+yay -S kotlin-language-server
 
 # Ubuntu/Debian
 sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1.0 adb
