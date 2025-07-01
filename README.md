@@ -32,7 +32,7 @@ yay -S kotlin-language-server
 # Ubuntu/Debian
 sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1.0 adb
 ```
-For Kotlin Installation in Ubuntu, follow <strong>https://ultahost.com/knowledge-base/install-kotlin-ubuntu/</strong> <br><br>
+For Kotlin Language Server Installation in Ubuntu, follow <strong>https://ultahost.com/knowledge-base/install-kotlin-ubuntu/</strong> <br><br>
 ❗Important Note : The Kotlin language server would be automatically setup on the installation of the dockapp, in case some error occurs, it should be manually downloaded. <br><br>
 2. Install Python dependencies:
 
