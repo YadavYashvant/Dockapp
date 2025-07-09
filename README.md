@@ -6,7 +6,7 @@ DockApp is a lightweight GTK-based Android development environment for Linux. It
 
 - [x] Project creation and management
 - [x] Code editor with Kotlin LSP support
-- [x] Modern GTK interface using libadwaita
+- [x] GTK interface using libadwaita
 - [ ] USB device debugging
 - [ ] Build and run capabilities
 
